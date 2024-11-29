@@ -12,15 +12,19 @@
                     "cookie-parser": "^1.4.7",
                     "csrf": "^3.1.0",
                     "csurf": "^1.11.0",
+                    "ejs": "^3.1.10",
                     "express": "^4.21.1",
                     "express-rate-limit": "^7.4.1",
                     "express-session": "^1.18.1",
                     "helmet": "^7.2.0",
                     "jsonwebtoken": "^9.0.2",
-                    "mongoose": "^7.2.2",
                     "pg": "^8.13.1"
           },
           "keywords": [],
           "author": "",
-          "license": "ISC"
+          "license": "ISC",
+          "devDependencies": {
+                    "autoprefixer": "^10.4.20",
+                    "tailwindcss": "^3.4.15"
+          }
 }

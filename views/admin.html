@@ -5,24 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Administrador</title>
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link href="/public/output.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Bienvenido, Administrador</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
-            </ul>
-        </nav>
+<body class="bg-gray-100 text-gray-900">
+
+    <header class="bg-blue-600 text-white py-6 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-semibold">Bienvenido, Administrador</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-blue-300">Inicio</a></li>
+                    <li><a href="/" onclick="logout()" class="hover:text-blue-300">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <p>Esta es tu área de administración. Desde aquí puedes gestionar usuarios y supervisar el sistema.</p>
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-xl font-semibold mb-4">Gestión de Usuarios</h2>
+        <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow">
+            <thead class="bg-blue-100">
+                <tr>
+                    <th class="py-2 px-4 border">Nombre</th>
+                    <th class="py-2 px-4 border">Email</th>
+                    <th class="py-2 px-4 border">Rol</th>
+                    <th class="py-2 px-4 border">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="py-2 px-4 border">Juan Pérez</td>
+                    <td class="py-2 px-4 border">juan@example.com</td>
+                    <td class="py-2 px-4 border">Usuario</td>
+                    <td class="py-2 px-4 border text-center">
+                        <button class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 transition">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 
-    <footer>
+    <footer class="bg-blue-600 text-white text-center py-4 mt-8">
         <p>&copy; 2024 Sistema de Autenticación</p>
     </footer>
 

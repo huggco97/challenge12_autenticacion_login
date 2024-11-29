@@ -5,24 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Usuario</title>
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link href="/public/output.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Bienvenido, Usuario</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
-            </ul>
-        </nav>
+<body class="bg-gray-100 text-gray-900">
+
+    <header class="bg-green-600 text-white py-6 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-semibold">Bienvenido, Usuario</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-green-300">Inicio</a></li>
+                    <li><a href="/" onclick="logout()" class="hover:text-green-300">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <p>Esta es tu área personal. Aquí puedes gestionar tus datos y acceder a recursos exclusivos para usuarios.</p>
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-xl font-semibold mb-4">Mi Información</h2>
+        <div class="bg-white p-6 rounded-lg shadow">
+            <p><strong>Nombre:</strong> Usuario Ejemplo</p>
+            <p><strong>Email:</strong> usuario@example.com</p>
+            <p><strong>Rol:</strong> Usuario</p>
+        </div>
     </main>
 
-    <footer>
+    <footer class="bg-green-600 text-white text-center py-4 mt-8">
         <p>&copy; 2024 Sistema de Autenticación</p>
     </footer>
 
@@ -34,3 +43,4 @@
     </script>
 </body>
 </html>
+
