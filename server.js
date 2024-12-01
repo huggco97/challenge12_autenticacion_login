@@ -7,7 +7,6 @@ const csrf = require('csurf');
 const helmet = require('helmet');
 const path = require('path');
 const jwt = require('jsonwebtoken');
-const router = require('./routes/userRoutes')
 const { connectDB } = require('./config');
 const { initializeUserTable } = require('./models/User');
 const app = express();
