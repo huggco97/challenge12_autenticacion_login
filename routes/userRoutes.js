@@ -15,7 +15,7 @@ router.get('/admin', verifyToken, verifyRole('Administrador'), (req, res) => {
 
 });
 
-router.get('/admin-users', async (req, res) => {
+router.get('/admin-users', verifyToken, verifyRole('Administrador'), async (req, res) => {
     try {
         const result = await pool.query('SELECT id, email, role FROM users');
         const users = result.rows;
