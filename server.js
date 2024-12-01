@@ -27,7 +27,7 @@ app.use(session({
 }));
 app.use(helmet());
 app.use(express.static(path.join(__dirname, 'public'))); // Configuración de archivos estáticos
-
+app.use(express.static(path.join(__dirname, "views")));
 // Conectar a PostgreSQL
 connectDB();
 
