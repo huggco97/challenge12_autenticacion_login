@@ -52,7 +52,7 @@ exports.login = async (req, res) => {
         // Establecer la cookie con el token
         res.cookie('token', token, { 
             httpOnly: true, 
-            secure: true, // Esto requiere HTTPS en producción, si es local usa secure: false
+            secure: false, // Esto requiere HTTPS en producción, si es local usa secure: false
             maxAge: rememberMe ? 7 * 24 * 60 * 60 * 1000 : 60 * 60 * 1000 // 7 días o 1 hora
         });
 
