@@ -13,6 +13,7 @@ const app = express();
 const csrfProtection = csrf({ cookie: true });
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
+const { verifyToken } = require('./middleware/authMiddleware');
 
 // Middleware
 app.use(bodyParser.json());
@@ -47,18 +48,6 @@ app.use('/', userRoutes);
 app.get('/csrf-token', csrfProtection, (req, res) => {
     res.json({ csrfToken: req.csrfToken() });
 });
-
-// Middleware para verificar el token JWT
-const verifyToken = (req, res, next) => {
-    const token = req.cookies.token;  // Tomamos el token de la cookie
-    if (!token) return res.status(403).send('Acceso denegado. No se encontró el token.');
-
-    jwt.verify(token, 'secretKey', (err, decoded) => {
-        if (err) return res.status(403).send('Token inválido');
-        req.user = decoded;  // Guardamos la información del usuario decodificada en la solicitud
-        next();  // Continuamos con la siguiente función o ruta
-    });
-};
 
 // Ruta protegida para administradores
 app.get('/admin', verifyToken, (req, res) => {
